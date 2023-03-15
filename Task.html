@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="TaskJS.js"></script>
+    <script src="Task2.js"></script>
+</head>
+<body>
+    <div class="container">
+       <form onsubmit="sendMail(); reset(); return false;">
+        <input type="text" id="name" required>
+        <input type="email" id="email" required>
+        <input type="text" id="num" required>
+        <input type="text" id="text" required>
+        <button type="submit">Save</button>
+       </form>
+    </div>
+    <script src="https://smtpjs.com/v3/smtp.js" >
+    </script>
+  <script>
+    function sendMail(){
+        Email.send({
+            Host: "smtp.gmail.com",
+            Username: "vetriveera02@gmail.com",
+            Password: "Vetrivel0000",
+            To: document.getElementById("email").value,
+            From: "vetriveera02@gmail.com",
+            Subject: "Empty Mail",
+            Body: "And this is the body"
+        }).then(
+            message => alert(message)
+        );
+    }
+  </script>
+</body>
+</html>
